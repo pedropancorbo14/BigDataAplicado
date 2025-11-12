@@ -1,0 +1,74 @@
+[
+    {
+        "id": "Sensor Temperatura y humedad 1",
+        "type": "Temperatura y humedad",
+        "attribute": {
+            "location": {
+                "type": "String",
+                "value": "Puerta"
+            },
+            "temperature": {
+                "type": "Float",
+                "value": 20
+            },
+            "humidity": {
+                "type": "Float",
+                "value": 80
+            },
+            "date": {
+                "type": "Datetime",
+                "value": "2024-04-02 20:22:44"
+            }
+        },
+        "created_at": "2024-04-02 20:22:44",
+        "updated_at": "2024-04-02 20:22:44"
+    },
+    {
+        "id": "Sensor Temperatura y humedad 2",
+        "type": "Temperatura y humedad",
+        "attribute": {
+            "location": {
+                "type": "String",
+                "value": "Sala principal"
+            },
+            "temperature": {
+                "type": "Float",
+                "value": 22.5
+            },
+            "humidity": {
+                "type": "Float",
+                "value": 65
+            },
+            "date": {
+                "type": "Datetime",
+                "value": "2024-04-02 20:25:10"
+            }
+        },
+        "created_at": "2024-04-02 20:25:10",
+        "updated_at": "2024-04-02 20:25:10"
+    },
+    {
+        "id": "Sensor Temperatura y humedad 3",
+        "type": "Temperatura y humedad",
+        "attribute": {
+            "location": {
+                "type": "String",
+                "value": "Almacén"
+            },
+            "temperature": {
+                "type": "Float",
+                "value": 18.7
+            },
+            "humidity": {
+                "type": "Float",
+                "value": 72
+            },
+            "date": {
+                "type": "Datetime",
+                "value": "2024-04-02 20:30:27"
+            }
+        },
+        "created_at": "2024-04-02 20:30:27",
+        "updated_at": "2024-04-02 20:30:27"
+    }
+]
