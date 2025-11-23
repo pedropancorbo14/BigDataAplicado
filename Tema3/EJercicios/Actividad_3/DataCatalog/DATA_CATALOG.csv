@@ -1,0 +1,13 @@
+Nombre Dataset,Capa,Origen,Columnas Principales,Descripción
+Calificaciones.csv,Bronce,Sistema Académico,"alumno,  curso,  anyo,  evaluacion,  nota_numerica","Notas originales por alumno,  curso y evaluación"
+Cursos.csv,Bronce,Sistema Académico,"codigo,  nombre_cas",Catálogo de cursos
+Alumnos.csv,Bronce,Sistema Académico,NIA,Información de alumnos
+Modulos.csv,Bronce,Sistema Académico,"codigo,  nombre_modulo",Catálogo de módulos
+Grupos.csv,Bronce,Sistema Académico,codigo,Datos de grupos
+Calificaciones_limpio.csv,Plata,Proceso ETL,"alumno,  curso,  anyo,  evaluacion,  nota_numerica",Datos limpios y normalizados
+dim_alumno.csv,Oro,Transformación,alumno_id,Dimensión alumno
+dim_curso.csv,Oro,Transformación,"curso_id,  nombre_cas",Dimensión curso
+dim_modulo.csv,Oro,Transformación,modulo_id,Dimensión módulo
+dim_grupo.csv,Oro,Transformación,grupo_id,Dimensión grupo
+dim_evaluacion.csv,Oro,Transformación,evaluacion_id,Dimensión evaluación
+fact_media_calificaciones.csv,Oro,Transformación,"alumno,  curso,  anyo,  evaluacion,   media_nota",Media de notas por alumno

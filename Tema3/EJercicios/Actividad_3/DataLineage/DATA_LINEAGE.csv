@@ -1,0 +1,8 @@
+Etapa/Fichero,Origen,Transformaciones,Destino,Responsable
+Inicio: Calificaciones.csv,Calificaciones.csv,Ninguna. Datos brutos.,Bronce,Ingesta
+Transformación (1),Calificaciones.csv,"Limpieza,  eliminación duplicados,  normalización columnas",Plata,Ingeniero de Datos
+Transformación (2),Calificaciones + Cursos.csv,"Merge por curso↔codigo,  añadir nombre_cas",Plata,Ingeniero de Datos
+Transformación (3),Calificaciones Limpio,Agrupación por alumno/curso/año/evaluación y media_nota,Oro,Ingeniero de Datos
+Transformación (4),Calificaciones Agrupado,Generación de parquet y CSV por año/evaluación,Oro,Ingeniero de Datos
+Dimensiones,Alumnos/Cursos/Grupos/Modulos,"Deduplicación,  renombrado claves,  creación dim_*",Oro,Ingeniero de Datos
+Agregación Final,Calificaciones + Dimensiones,Construcción fact_media_calificaciones,Oro,Analista BI
