@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  nifi:
+    image: apache/nifi:1.27.0
+    container_name: nifi
+    restart: unless-stopped
+    ports:
+      - "8443:8443"
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=Admin1234!
+      - NIFI_WEB_HTTPS_PORT=8443
+      - NIFI_JVM_HEAP_INIT=2g
+      - NIFI_JVM_HEAP_MAX=4g
+      - NIFI_REGISTRY_URL=https://nifi-registry:18443
+    depends_on:
+      - nifi-registry
+    volumes:
+      - nifi_data:/opt/nifi/nifi-current
+      - nifi_state:/opt/nifi/nifi-current/state
+      - nifi_conf:/opt/nifi/nifi-current/conf
+
+      - ./data/in:/data/in
+      - ./data/out:/data/out
+      - ./data/error:/data/error
+
+    networks:
+      - nifi_network
+
+  nifi-registry:
+    image: apache/nifi-registry:1.27.0
+    container_name: nifi-registry
+    restart: unless-stopped
+    ports:
+      - "18443:18443"
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=Admin1234!
+      - NIFI_REGISTRY_WEB_HTTPS_PORT=18443
+    volumes:
+      - registry_data:/opt/nifi-registry/nifi-registry-current
+      - registry_conf:/opt/nifi-registry/nifi-registry-current/conf
+    networks:
+      - nifi_network
+
+volumes:
+  nifi_data:
+  nifi_state:
+  nifi_conf:
+  registry_data:
+  registry_conf:
+
+networks:
+  nifi_network:
+    driver: bridge
